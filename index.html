@@ -147,15 +147,17 @@
 
   /* Stack diagram: the one memorable moment */
   .stack { position: relative; display: grid; gap: 14px; padding: 26px; border-radius: 28px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
-  .stack-top { display: flex; align-items: center; gap: 16px; margin-bottom: 4px; }
-  .avatar { width: 72px; height: 72px; border-radius: 22px; background: linear-gradient(135deg, var(--accent), var(--warm)); display: grid; place-items: center; font-family: var(--display); font-weight: 800; font-size: 1.6rem; color: #fff; flex: none; overflow: hidden; }
-  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+.stack-top { display: grid; gap: 14px; margin-bottom: 4px; }
+.avatar { width: 100%; aspect-ratio: 4 / 4.4; max-height: 380px; border-radius: 22px; background: linear-gradient(135deg, var(--accent), var(--warm)); display: grid; place-items: center; font-family: var(--display); font-weight: 800; font-size: 3rem; color: #fff; overflow: hidden; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.layers { position: relative; display: grid; gap: 14px; }
+.packet { top: 6px; }
   .stack-top strong { font-family: var(--display); font-size: 1.15rem; display: block; }
   .stack-top span { color: var(--muted); font-size: .92rem; }
   .layer { position: relative; padding: 16px 18px; border-radius: 16px; background: var(--surface-2); border: 1px solid var(--line); animation: glow 6s infinite; }
-  .layer:nth-of-type(2) { animation-delay: 0s; }
-  .layer:nth-of-type(3) { animation-delay: 2s; }
-  .layer:nth-of-type(4) { animation-delay: 4s; }
+  .layer:nth-of-type(1) { animation-delay: 0s; }
+  .layer:nth-of-type(2) { animation-delay: 2s; }
+  .layer:nth-of-type(3) { animation-delay: 4s; }
   .layer h3 { font-size: 1.02rem; font-weight: 700; }
   .layer p { font-size: .9rem; color: var(--muted); }
   @keyframes glow { 0%, 28%, 100% { border-color: var(--line); background: var(--surface-2); } 8%, 20% { border-color: var(--accent); background: var(--accent-soft); } }
@@ -231,7 +233,8 @@
   @media (max-width: 560px) { .cert { grid-template-columns: 1fr; } }
 
   /* ---------- Resume ---------- */
-  .resume-card { max-width: 860px; padding: 40px; }
+ .resume-frame { display: block; width: 100%; height: 700px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+@media (max-width: 700px) { .resume-frame { height: 520px; } }
   .r-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
   .r-head h3 { font-size: 2rem; }
   .r-head p { color: var(--muted); }
